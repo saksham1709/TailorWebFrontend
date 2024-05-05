@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 import "./cart.css";
 const Cart = () => {
     const [cartItems, setCartItems] = useState([]);
-    const [customStyle, setCustomStyle] = useState();
+    const [color, setColor] = useState();
+    const [cuff, setCuff] = useState();
+    const [collar, setCollar] = useState();
+    const [pocket, setPocket] = useState();
     const [total, setTotal] = useState(0);
 
     // Fetch cart items from the API
@@ -12,13 +15,15 @@ const Cart = () => {
             try {
                 const cartResponse = await fetch('/cart');
                 const cartData = await cartResponse.json();
-                console.log(cartData[0].customStyle, "jdkhasjdkhakds")
-                const styles = cartData[0].customStyle;
+                // console.log(cartData[0].customStyle, "jdkhasjdkhakds")
                 const productResponse = await fetch(`/products/${cartData[0].productId}`);
                 const productData = await productResponse.json();
                 console.log("console log", productData)
                 setCartItems(productData);
-                setCustomStyle(styles)
+                setColor(cartData[0].customStyle.color)
+                setCuff(cartData[0].customStyle.cuff)
+                setPocket(cartData[0].customStyle.collar)
+                setColor(cartData[0].customStyle.pocket)
                 // setTotal()
             } catch (err) {
                 console.log(err)
@@ -84,10 +89,10 @@ const Cart = () => {
                 <div className="cart-item-info">
                     <h3>{cartItems.name}</h3>
 
-                    <h2>Color: {cartData[0].customStyle.color}</h2>
-                    <h2>Collar: {cartData[0].customStyle.collar}</h2>
-                    <h2>Cuff: {cartData[0].customStyle.cuff}</h2>
-                    <h2>Pocket: {cartData[0].customStyle.pocket}</h2>
+                    <h2>Color: {color}</h2>
+                    <h2>Collar: {collar}</h2>
+                    <h2>Cuff: {cuff}</h2>
+                    <h2>Pocket: {pocket}</h2>
 
                     {/* <div className="quantity-buttons">
                         <button onClick={() => handleQuantityChange(index, item.quantity - 1)}>-</button>
