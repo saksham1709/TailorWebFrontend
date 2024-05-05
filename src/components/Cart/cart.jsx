@@ -84,14 +84,14 @@ const Cart = () => {
                         <span>{item.quantity}</span>
                         <button onClick={() => handleQuantityChange(index, item.quantity + 1)}>+</button>
                     </div> */}
-                    <button onClick={() => handleRemoveItem(index)}>Remove</button>
+                    {/* <button onClick={() => handleRemoveItem(index)}>Remove</button> */}
                 </div>
                 {/* <div className="cart-item-price">${item.price * item.quantity}</div> */}
             </div>
             {/* ))} */}
-            {/* <div className="cart-total">
-                Total: ${total}
-            </div> */}
+            <div className="cart-total">
+                Price: ${cartItems.price}
+            </div>
             <button className="place-order-button">Place Order</button>
         </div>
     );
