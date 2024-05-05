@@ -91,10 +91,10 @@ const Cart = () => {
                     <div className="cart-item-info">
                         <h3>{cartItems.name}</h3>
 
-                        <h3 style={{ fontWeight: 400 }} >Color: {color}</h3>
-                        <h3 style={{ fontWeight: 400 }} >Collar: {collar}</h3>
-                        <h3 style={{ fontWeight: 400 }} >Cuff: {cuff}</h3>
-                        <h3 style={{ fontWeight: 400 }} >Pocket: {pocket}</h3>
+                        <h3 style={{ fontWeight: 400 }} >Color: {item.customStyle.color}</h3>
+                        <h3 style={{ fontWeight: 400 }} >Collar: {item.customStyle.collar}</h3>
+                        <h3 style={{ fontWeight: 400 }} >Cuff: {item.customStyle.cuff}</h3>
+                        <h3 style={{ fontWeight: 400 }} >Pocket: {item.customStyle.pocket}</h3>
 
                         {/* <div className="quantity-buttons">
                         <button onClick={() => handleQuantityChange(index, item.quantity - 1)}>-</button>
