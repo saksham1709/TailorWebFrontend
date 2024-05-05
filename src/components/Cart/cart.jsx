@@ -11,8 +11,8 @@ const Cart = () => {
             try {
                 const cartResponse = await fetch('/cart');
                 const cartData = await cartResponse.json();
-                console.log(cartData)
-                const productResponse = await fetch(`/products/${cartData.productId}`);
+                console.log(cartData[0])
+                const productResponse = await fetch(`/products/${cartData[0].productId}`);
                 const productData = await productResponse.json();
                 setCartItems(productData);
                 // setTotal()
