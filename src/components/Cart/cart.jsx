@@ -14,6 +14,7 @@ const Cart = () => {
                 console.log(cartData[0])
                 const productResponse = await fetch(`/products/${cartData[0].productId}`);
                 const productData = await productResponse.json();
+                console.log("console log", productData)
                 setCartItems(productData);
                 // setTotal()
             } catch (err) {
