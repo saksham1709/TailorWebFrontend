@@ -7,13 +7,25 @@ const Fabric = () => {
 
     useEffect(() => {
         // Fetch the list of fabrics from the API
-        fetch('/products/fabrics')
-            .then(response => response.json())
-            .then(data => {
-                setFabrics(data);
-                // setFabrics(data.fabrics);
-            })
-            .catch(error => console.error('Error fetching fabrics:', error));
+        const fetchFabrics = async () => {
+            try {
+                const resposne = await fetch('/products/fabrics');
+                console.log("text", resposne);
+                setFabrics(resposne)
+            } catch (err) {
+                console.log(err)
+            }
+        }
+
+        fetchFabrics();
+        // fetch('/products/fabrics')
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         console.log(data, "sgsagsjaj")
+        //         setFabrics(data);
+        //         // setFabrics(data.fabrics);
+        //     })
+        //     .catch(error => console.error('Error fetching fabrics:', error));
     }, []);
 
     return (
