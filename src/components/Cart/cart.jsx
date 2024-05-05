@@ -76,7 +76,7 @@ const Cart = () => {
             <h1>Your Cart</h1>
             {cartItems.map((item, index) => (
                 <div key={item.id} className="cart-item">
-                    <img src={item.image} alt={item.name} />
+                    <img src={item.images} alt={item.name} />
                     <div className="cart-item-info">
                         <h3>{item.name}</h3>
                         <div className="quantity-buttons">
@@ -86,12 +86,12 @@ const Cart = () => {
                         </div>
                         <button onClick={() => handleRemoveItem(index)}>Remove</button>
                     </div>
-                    <div className="cart-item-price">${item.price * item.quantity}</div>
+                    {/* <div className="cart-item-price">${item.price * item.quantity}</div> */}
                 </div>
             ))}
-            <div className="cart-total">
+            {/* <div className="cart-total">
                 Total: ${total}
-            </div>
+            </div> */}
             <button className="place-order-button">Place Order</button>
         </div>
     );
