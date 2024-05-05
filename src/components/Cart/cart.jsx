@@ -12,7 +12,7 @@ const Cart = () => {
             try {
                 const cartResponse = await fetch('/cart');
                 const cartData = await cartResponse.json();
-                console.log(cartData[0])
+                console.log(cartData[0].customStyle, "jdkhasjdkhakds")
                 const styles = cartData[0].customStyle;
                 const productResponse = await fetch(`/products/${cartData[0].productId}`);
                 const productData = await productResponse.json();
@@ -83,11 +83,11 @@ const Cart = () => {
                 <img src={cartItems.images} alt={cartItems.name} />
                 <div className="cart-item-info">
                     <h3>{cartItems.name}</h3>
-                    
-                    <h2>Color: {customStyle.color}</h2>
+
+                    {/* <h2>Color: {customStyle.color}</h2>
                     <h2>Collar: {customStyle.collar}</h2>
                     <h2>Cuff: {customStyle.cuff}</h2>
-                    <h2>Pocket: {customStyle.pocket}</h2>
+                    <h2>Pocket: {customStyle.pocket}</h2> */}
 
                     {/* <div className="quantity-buttons">
                         <button onClick={() => handleQuantityChange(index, item.quantity - 1)}>-</button>
