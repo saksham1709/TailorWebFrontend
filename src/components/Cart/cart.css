@@ -42,6 +42,11 @@
     font-weight: bold;
     margin-bottom: 5px;
 }
+.cart-item-info h2 {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
 
 .cart-item-info .quantity-buttons,
 .cart-item-info button {

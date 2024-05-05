@@ -37,7 +37,7 @@ const Product = () => {
             productId: productDetails._id,
             // productName: productDetails.name,
             // price: productDetails.price,
-            // customStyle,
+            customStyle,
             // Other information as needed
         };
 
@@ -166,6 +166,24 @@ const Product = () => {
                                     type="text"
                                     name="collar"
                                     value={customStyle.collar || ''}
+                                    onChange={handleCustomStyleChange}
+                                />
+                            </label>
+                            <label>
+                                Cuff:
+                                <input
+                                    type="text"
+                                    name="cuff"
+                                    value={customStyle.cuff || ''}
+                                    onChange={handleCustomStyleChange}
+                                />
+                            </label>
+                            <label>
+                                Pocket:
+                                <input
+                                    type="text"
+                                    name="pocket"
+                                    value={customStyle.pocket || ''}
                                     onChange={handleCustomStyleChange}
                                 />
                             </label>
