@@ -87,9 +87,9 @@ const Cart = () => {
             <h1>Your Cart</h1>
             {cartArray.map((item, index) => (
                 <div className="cart-item">
-                    <img src={cartItems.images} alt={cartItems.name} />
+                    <img src={item.productInfo.images} alt={item.productInfo.name} />
                     <div className="cart-item-info">
-                        <h3>{cartItems.name}</h3>
+                        <h3>{item.productInfo.name}</h3>
 
                         <h3 style={{ fontWeight: 400 }} >Color: {item.customStyle.color}</h3>
                         <h3 style={{ fontWeight: 400 }} >Collar: {item.customStyle.collar}</h3>
@@ -103,7 +103,7 @@ const Cart = () => {
                     </div> */}
                         {/* <button onClick={() => handleRemoveItem(index)}>Remove</button> */}
                     </div>
-                    <div className="cart-item-price">${cartItems.price}</div>
+                    <div className="cart-item-price">${item.productInfo.price}</div>
                     {/* <div className="cart-item-price">${item.price * item.quantity}</div> */}
                 </div>
             ))}
