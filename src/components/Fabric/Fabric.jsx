@@ -10,7 +10,8 @@ const Fabric = () => {
         fetch('/products/fabrics')
             .then(response => response.json())
             .then(data => {
-                setFabrics(data.fabrics);
+                setFabrics(data);
+                // setFabrics(data.fabrics);
             })
             .catch(error => console.error('Error fetching fabrics:', error));
     }, []);
@@ -21,10 +22,10 @@ const Fabric = () => {
             <div className="fabric-cards-container">
                 {fabrics.map((fabric, index) => (
                     <div key={index} className="fabric-card">
-                        <img src={fabric.image} alt={fabric.name} className="fabric-image" />
+                        <img src={fabric.images} alt={fabric.name} className="fabric-image" />
                         <div className="fabric-info">
                             <h3>{fabric.name}</h3>
-                            <p>{fabric.description}</p>
+                            <p>{fabric.price}</p>
                             <Link to={`/products/${encodeURIComponent(fabric.productName)}`} className="fabric-link">
                                 View Product
                             </Link>
