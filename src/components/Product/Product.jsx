@@ -35,14 +35,14 @@ const Product = () => {
         // Prepare payload for add to cart API request
         const payload = {
             productId: productDetails._id,
-            productName: productDetails.name,
-            price: productDetails.price,
-            customStyle,
+            // productName: productDetails.name,
+            // price: productDetails.price,
+            // customStyle,
             // Other information as needed
         };
 
         // Perform API request to add product to cart
-        const response = await fetch('/cart/add', {
+        const response = await fetch('/cart', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
