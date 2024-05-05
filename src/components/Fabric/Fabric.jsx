@@ -7,7 +7,7 @@ const Fabric = () => {
 
     useEffect(() => {
         // Fetch the list of fabrics from the API
-        fetch('/fabrics')
+        fetch('/products/fabrics')
             .then(response => response.json())
             .then(data => {
                 setFabrics(data.fabrics);
@@ -25,7 +25,7 @@ const Fabric = () => {
                         <div className="fabric-info">
                             <h3>{fabric.name}</h3>
                             <p>{fabric.description}</p>
-                            <Link to={`/product/${encodeURIComponent(fabric.productName)}`} className="fabric-link">
+                            <Link to={`/products/${encodeURIComponent(fabric.productName)}`} className="fabric-link">
                                 View Product
                             </Link>
                         </div>

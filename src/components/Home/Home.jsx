@@ -33,7 +33,7 @@ const Home = () => {
               <p className="product-price">${product.price}</p>
             </div>
 
-            <Link to={`/product/${product.name}`} className="product-link">
+            <Link to={`/products/${product.id}`} className="product-link">
               View Details
             </Link>
           </div>

@@ -6,8 +6,9 @@ const Register = () => {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
         username: '',
+        name: '',
         email: '',
-        password: ''
+        phone: ''
     });
 
     const handleChange = (e) => {
@@ -49,13 +50,17 @@ const Register = () => {
                             <label for="username">Username:</label>
                             <input type="text" id="username" name="username" value={formData.username} onChange={handleChange} required />
                         </div>
+                        <div htmlFor="name" className="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
+                        </div>
                         <div className="form-group" >
                             <label htmlFor="email">Email:</label>
                             <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="password">Password:</label>
-                            <input type="password" id="password" name="password" value={formData.password} onChange={handleChange} required />
+                            <label htmlFor="password">Phone:</label>
+                            <input type="number" id="phone" name="phone" value={formData.phone} onChange={handleChange} required />
                         </div>
                         <div className="button-group">
                             <div className="register-button">

@@ -78,16 +78,16 @@ const Profile = () => {
       <div className="profile-info">
         <h2>User Profile</h2>
         <div className="profile-detail">
-          <strong>Username:</strong> {user.username}
+          <strong>Username:</strong> {user?.username}
         </div>
         <div className="profile-detail">
-          <strong>Email:</strong> {user.email}
+          <strong>Email:</strong> {user?.email}
         </div>
         <div className="profile-detail">
-          <strong>Phone Number:</strong> {user.phoneNumber}
+          <strong>Phone Number:</strong> {user?.phoneNumber}
         </div>
         <div className="profile-detail">
-          <strong>Address:</strong> {user.address}
+          <strong>Address:</strong> {user?.address}
         </div> 
       </div>
     </div>
