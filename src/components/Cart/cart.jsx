@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import "./cart.css";
 const Cart = () => {
     const [cartItems, setCartItems] = useState([]);
+    const [cartArray, setCartArray] = useState([])
     const [color, setColor] = useState();
     const [cuff, setCuff] = useState();
     const [collar, setCollar] = useState();
@@ -15,6 +16,7 @@ const Cart = () => {
             try {
                 const cartResponse = await fetch('/cart');
                 const cartData = await cartResponse.json();
+                setCartArray(cartData)
                 // console.log(cartData[0].customStyle, "jdkhasjdkhakds")
                 const productResponse = await fetch(`/products/${cartData[0].productId}`);
                 const productData = await productResponse.json();
@@ -83,7 +85,7 @@ const Cart = () => {
     return (
         <div className="cart-container">
             <h1>Your Cart</h1>
-            {cartItems.map((item, index) => (
+            {cartArray.map((item, index) => (
                 <div className="cart-item">
                     <img src={cartItems.images} alt={cartItems.name} />
                     <div className="cart-item-info">
