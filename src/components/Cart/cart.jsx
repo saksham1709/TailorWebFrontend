@@ -75,15 +75,15 @@ const Cart = () => {
         <div className="cart-container">
             <h1>Your Cart</h1>
             {/* {cartItems.map((item, index) => ( */}
-            <div key={item.id} className="cart-item">
-                <img src={item.images} alt={item.name} />
+            <div className="cart-item">
+                <img src={cartItems.images} alt={cartItems.name} />
                 <div className="cart-item-info">
-                    <h3>{item.name}</h3>
-                    <div className="quantity-buttons">
+                    <h3>{cartItems.name}</h3>
+                    {/* <div className="quantity-buttons">
                         <button onClick={() => handleQuantityChange(index, item.quantity - 1)}>-</button>
                         <span>{item.quantity}</span>
                         <button onClick={() => handleQuantityChange(index, item.quantity + 1)}>+</button>
-                    </div>
+                    </div> */}
                     <button onClick={() => handleRemoveItem(index)}>Remove</button>
                 </div>
                 {/* <div className="cart-item-price">${item.price * item.quantity}</div> */}
