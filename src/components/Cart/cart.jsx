@@ -7,13 +7,27 @@ const Cart = () => {
     // Fetch cart items from the API
     useEffect(() => {
         // Make API call to fetch cart items
-        fetch('/cart')
-            .then(response => response.json())
-            .then(data => {
-                setCartItems(data.cartItems);
-                setTotal(data.total);
-            })
-            .catch(error => console.error('Error fetching cart items:', error));
+        const fetchCart = async () => {
+            try {
+                const cartResponse = await fetch('/cart');
+                const cartData = await cartResponse.json();
+                console.log(cartData)
+                const productResponse = await fetch(`/products/${cartData.productId}`);
+                const productData = await productResponse.json();
+                setCartItems(productData);
+                // setTotal()
+            } catch(err) {
+                console.log(err)
+            }
+        }
+        fetchCart();
+        // fetch('/cart')
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         setCartItems(data.cartItems);
+        //         setTotal(data.total);
+        //     })
+        //     .catch(error => console.error('Error fetching cart items:', error));
     }, []);
 
     // Handle quantity change
