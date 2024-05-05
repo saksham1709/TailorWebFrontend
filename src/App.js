@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Register from './components/Register/Resgiter';
 import Home from './components/Home/Home';
@@ -13,9 +13,28 @@ import Fabric from './components/Fabric/Fabric';
 import Order from './components/Order/Order';
 
 const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLogout = async () => {
+    try {
+      const response = await fetch('/user/logout', {
+        method: 'POST',
+        credentials: 'include',
+      });
+      if (response.ok) {
+        // Redirect to the login page or home page after logout
+        setIsLoggedIn(false);
+        // window.location.href = '/login';
+      } else {
+        console.error('Error logging out:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Error logging out:', error);
+    }
+  };
   return (
     <BrowserRouter>
-      <Navbar />
+      <Navbar isLoggedIn={isLoggedIn} onLogout={handleLogout} />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path="/register" element={<Register />} />

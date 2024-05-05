@@ -2,7 +2,7 @@ import React from 'react'
 import "./navbar.css";
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({ isLoggedIn, onLogout }) => {
   return (
     <header>
       <div className="navbar">
@@ -18,8 +18,14 @@ const Navbar = () => {
         </div>
         <div className="right">
           <ul className="links">
-            <li className="link"><Link to="/login">Login/Signup</Link></li>
-            <li className="link"><Link to="/cart">Cart</Link></li>
+          {isLoggedIn ? (
+              <>
+                <li className="link" onClick={onLogout}>Logout</li>
+                <li className="link"><Link to="/cart">Cart</Link></li>
+              </>
+            ) : (
+              <li className="link"><Link to="/login">Login/Signup</Link></li>
+            )}
           </ul>
         </div>
       </div>
