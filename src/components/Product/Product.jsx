@@ -139,26 +139,11 @@ const Product = () => {
 
                 <div className="sub-heading">Default Style</div>
                 <div className="default-style">
-                    <p>Color: {setCustomStyle((prevCustomStyle) => ({
-                        ...prevCustomStyle,
-                        [`color`]: `Blue`,
-                    }))}</p>
-                    <p>Cuff: {setCustomStyle((prevCustomStyle) => ({
-                        ...prevCustomStyle,
-                        [`cuff`]: `Single Button`,
-                    }))}</p>
-                    <p>Collar: {setCustomStyle((prevCustomStyle) => ({
-                        ...prevCustomStyle,
-                        [`olor`]: `Business Classic`,
-                    }))}</p>
-                    <p>Pocket: {setCustomStyle((prevCustomStyle) => ({
-                        ...prevCustomStyle,
-                        [`pocket`]: `V-shaped`,
-                    }))}</p>
-                    {/* <p>Collar: Business Classic</p> */}
-                    {/* <p>Cuff: Single Button</p> */}
+                    <p>Color: Blue</p>
+                    <p>Collar: Business Classic</p>
+                    <p>Cuff: Single Button</p>
                     {/* <p>Button Color: White</p> */}
-                    {/* <p>Pocket: 1 V-Shaped Pocket</p> */}
+                    <p>Pocket: 1 V-Shaped Pocket</p>
                     {/* <p>Placket: Plain</p> */}
                 </div>
 
