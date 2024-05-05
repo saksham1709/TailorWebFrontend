@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import "./cart.css";
 const Cart = () => {
     const [cartItems, setCartItems] = useState([]);
+    const [customStyle, setCustomStyle] = useState();
     const [total, setTotal] = useState(0);
 
     // Fetch cart items from the API
@@ -12,10 +13,12 @@ const Cart = () => {
                 const cartResponse = await fetch('/cart');
                 const cartData = await cartResponse.json();
                 console.log(cartData[0])
+                const styles = cartData[0].customStyle;
                 const productResponse = await fetch(`/products/${cartData[0].productId}`);
                 const productData = await productResponse.json();
                 console.log("console log", productData)
                 setCartItems(productData);
+                setCustomStyle(styles)
                 // setTotal()
             } catch (err) {
                 console.log(err)
@@ -80,10 +83,10 @@ const Cart = () => {
                 <img src={cartItems.images} alt={cartItems.name} />
                 <div className="cart-item-info">
                     <h3>{cartItems.name}</h3>
-                    <h2>Color: {cartItems.customStyle.color}</h2>
-                    <h2>Collar: {cartItems.customStyle.collar}</h2>
-                    <h2>Cuff: {cartItems.customStyle.cuff}</h2>
-                    <h2>Pocket: {cartItems.customStyle.pocket}</h2>
+                    <h2>Color: {customStyle.color}</h2>
+                    <h2>Collar: {customStyle.collar}</h2>
+                    <h2>Cuff: {customStyle.cuff}</h2>
+                    <h2>Pocket: {customStyle.pocket}</h2>
                     {/* <div className="quantity-buttons">
                         <button onClick={() => handleQuantityChange(index, item.quantity - 1)}>-</button>
                         <span>{item.quantity}</span>
