@@ -7,7 +7,7 @@ const Navbar = ({ isLoggedIn, onLogout }) => {
     <header>
       <div className="navbar">
         <div className="left">
-          <h1 className='logo'><Link to="/">TailorWeb</Link></h1>
+          <h1 className='logo'><Link to="/">Creative Threads</Link></h1>
         </div>
         <div className="middle">
           <ul className="links">
