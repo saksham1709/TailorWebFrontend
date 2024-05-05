@@ -83,28 +83,28 @@ const Cart = () => {
     return (
         <div className="cart-container">
             <h1>Your Cart</h1>
-            {/* {cartItems.map((item, index) => ( */}
-            <div className="cart-item">
-                <img src={cartItems.images} alt={cartItems.name} />
-                <div className="cart-item-info">
-                    <h3>{cartItems.name}</h3>
+            {cartItems.map((item, index) => (
+                <div className="cart-item">
+                    <img src={cartItems.images} alt={cartItems.name} />
+                    <div className="cart-item-info">
+                        <h3>{cartItems.name}</h3>
 
-                    <h3 style={{fontWeight: 400}} >Color: {color}</h3>
-                    <h3 style={{fontWeight: 400}} >Collar: {collar}</h3>
-                    <h3 style={{fontWeight: 400}} >Cuff: {cuff}</h3>
-                    <h3 style={{fontWeight: 400}} >Pocket: {pocket}</h3>
+                        <h3 style={{ fontWeight: 400 }} >Color: {color}</h3>
+                        <h3 style={{ fontWeight: 400 }} >Collar: {collar}</h3>
+                        <h3 style={{ fontWeight: 400 }} >Cuff: {cuff}</h3>
+                        <h3 style={{ fontWeight: 400 }} >Pocket: {pocket}</h3>
 
-                    {/* <div className="quantity-buttons">
+                        {/* <div className="quantity-buttons">
                         <button onClick={() => handleQuantityChange(index, item.quantity - 1)}>-</button>
                         <span>{item.quantity}</span>
                         <button onClick={() => handleQuantityChange(index, item.quantity + 1)}>+</button>
                     </div> */}
-                    {/* <button onClick={() => handleRemoveItem(index)}>Remove</button> */}
+                        {/* <button onClick={() => handleRemoveItem(index)}>Remove</button> */}
+                    </div>
+                    <div className="cart-item-price">${cartItems.price}</div>
+                    {/* <div className="cart-item-price">${item.price * item.quantity}</div> */}
                 </div>
-                <div className="cart-item-price">${cartItems.price}</div>
-                {/* <div className="cart-item-price">${item.price * item.quantity}</div> */}
-            </div>
-            {/* ))} */}
+            ))}
             {/* <div className="cart-total">
                 Price: ${cartItems.price}
             </div> */}
