@@ -31,10 +31,11 @@ const Product = () => {
         fetchProductDetails();
     }, [id]);
 
-    const handleAddToCart = async () => {
+    const handleAddToCart = async (e) => {
+        e.preventDefault();
         // Prepare payload for add to cart API request
         const payload = {
-            productId: productDetails._id,
+            productId: productDetails.id,
             // productName: productDetails.name,
             // price: productDetails.price,
             customStyle,
@@ -198,7 +199,7 @@ const Product = () => {
                                 />
                             </label>
                             <button type="submit" onClick={handleAddToCart}>
-                                Submit Custom Style $ Add to cart
+                                Submit & Add to cart
                             </button>
                         </form>
                     </div>
