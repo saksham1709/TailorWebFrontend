@@ -26,9 +26,9 @@ const Fabric = () => {
                         <div className="fabric-info">
                             <h3>{fabric.name}</h3>
                             <p>{fabric.price}</p>
-                            <Link to={`/products/${encodeURIComponent(fabric.productName)}`} className="fabric-link">
+                            {/* <Link to={`/products/${encodeURIComponent(fabric.productName)}`} className="fabric-link">
                                 View Product
-                            </Link>
+                            </Link> */}
                         </div>
                     </div>
                 ))}
