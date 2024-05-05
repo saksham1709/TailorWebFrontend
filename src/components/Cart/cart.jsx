@@ -86,12 +86,13 @@ const Cart = () => {
                     </div> */}
                     {/* <button onClick={() => handleRemoveItem(index)}>Remove</button> */}
                 </div>
+                <div className="cart-item-price">${cartItems.price}</div>
                 {/* <div className="cart-item-price">${item.price * item.quantity}</div> */}
             </div>
             {/* ))} */}
-            <div className="cart-total">
+            {/* <div className="cart-total">
                 Price: ${cartItems.price}
-            </div>
+            </div> */}
             <button className="place-order-button">Place Order</button>
         </div>
     );
