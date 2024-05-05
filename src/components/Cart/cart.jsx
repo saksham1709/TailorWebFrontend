@@ -79,6 +79,7 @@ const Cart = () => {
                 <img src={cartItems.images} alt={cartItems.name} />
                 <div className="cart-item-info">
                     <h3>{cartItems.name}</h3>
+                    <h2>Color: {cartItems.customStyle.color}</h2>
                     <h2>Collar: {cartItems.customStyle.collar}</h2>
                     <h2>Cuff: {cartItems.customStyle.cuff}</h2>
                     <h2>Pocket: {cartItems.customStyle.pocket}</h2>

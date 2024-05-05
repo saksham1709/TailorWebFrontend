@@ -161,6 +161,15 @@ const Product = () => {
                     <div className="custom-style-form">
                         <form>
                             <label>
+                                Color:
+                                <input
+                                    type="text"
+                                    name="color"
+                                    value={customStyle.color || ''}
+                                    onChange={handleCustomStyleChange}
+                                />
+                            </label>
+                            <label>
                                 Collar:
                                 <input
                                     type="text"
