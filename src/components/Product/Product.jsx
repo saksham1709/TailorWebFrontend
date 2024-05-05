@@ -4,7 +4,7 @@ import './product.css';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const Product = () => {
-    const { name } = useParams();
+    const { id } = useParams();
     const navigate = useNavigate();
     const [activeIndex, setActiveIndex] = useState(0);
     const [productDetails, setProductDetails] = useState({});
@@ -16,7 +16,8 @@ const Product = () => {
     useEffect(() => {
         const fetchProductDetails = async () => {
             // Perform API request for product details
-            const response = await fetch(`/products/products?name=${encodeURIComponent(name)}`);
+            const response = await fetch(`/products/${id}`);
+            // const response = await fetch(`/products/products?name=${encodeURIComponent(name)}`);
             const data = await response.json();
             setProductDetails(data);
             // Fetch fabric details using the fabric name
@@ -28,7 +29,7 @@ const Product = () => {
         };
 
         fetchProductDetails();
-    }, [name]);
+    }, [id]);
 
     const handleAddToCart = async () => {
         // Prepare payload for add to cart API request
