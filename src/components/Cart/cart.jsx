@@ -82,12 +82,13 @@ const Cart = () => {
             <div className="cart-item">
                 <img src={cartItems.images} alt={cartItems.name} />
                 <div className="cart-item-info">
-                    {/* <h3>{cartItems.name}</h3>
+                    <h3>{cartItems.name}</h3>
+                    
                     <h2>Color: {customStyle.color}</h2>
                     <h2>Collar: {customStyle.collar}</h2>
                     <h2>Cuff: {customStyle.cuff}</h2>
-                    <h2>Pocket: {customStyle.pocket}</h2> */}
-                    
+                    <h2>Pocket: {customStyle.pocket}</h2>
+
                     {/* <div className="quantity-buttons">
                         <button onClick={() => handleQuantityChange(index, item.quantity - 1)}>-</button>
                         <span>{item.quantity}</span>
