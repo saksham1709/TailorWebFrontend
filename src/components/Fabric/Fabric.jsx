@@ -9,9 +9,10 @@ const Fabric = () => {
         // Fetch the list of fabrics from the API
         const fetchFabrics = async () => {
             try {
-                const resposne = await fetch('/products/fabrics');
-                console.log("text", resposne);
-                setFabrics(resposne)
+                const response = await fetch('/products/fabrics');
+                const data = await response.json();
+                console.log("text", data);
+                setFabrics(data)
             } catch (err) {
                 console.log(err)
             }
