@@ -18,14 +18,9 @@ const Navbar = ({ isLoggedIn, onLogout }) => {
         </div>
         <div className="right">
           <ul className="links">
-          {isLoggedIn ? (
-              <>
-                <li className="link" onClick={onLogout}>Logout</li>
-                <li className="link"><Link to="/cart">Cart</Link></li>
-              </>
-            ) : (
-              <li className="link"><Link to="/login">Login/Signup</Link></li>
-            )}
+            
+            <li className="link"><Link to="/login">Login/Signup</Link></li>
+            <li className="link"><Link to="/cart">Cart</Link></li>
           </ul>
         </div>
       </div>
