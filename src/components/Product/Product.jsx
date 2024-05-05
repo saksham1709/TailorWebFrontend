@@ -150,9 +150,9 @@ const Product = () => {
                 <div className="price" style={{ color: 'red' }}>${productDetails.price}</div>
 
                 <div className="buttons">
-                    <button className="purchase-button" onClick={handleAddToCart}>
+                    {/* <button className="purchase-button" onClick={handleAddToCart}>
                         Add to Cart
-                    </button>
+                    </button> */}
                     <button className="customize-button" onClick={handleOpenCustomStyleForm}>
                         Customize Style
                     </button>
@@ -198,7 +198,7 @@ const Product = () => {
                                 />
                             </label>
                             <button type="submit" onClick={handleAddToCart}>
-                                Submit Custom Style
+                                Submit Custom Style $ Add to cart
                             </button>
                         </form>
                     </div>
