@@ -69,10 +69,10 @@ const Product = () => {
     };
 
     const carouselImages = [
-        '/images/shirt1.png',
-        '/images/shirt2.png',
-        '/images/shirt3.png',
-        '/images/shirt4.png',
+        productDetails.images,
+        productDetails.images,
+        productDetails.images,
+        productDetails.images,
     ];
 
     const handleSelect = (selectedIndex) => {
